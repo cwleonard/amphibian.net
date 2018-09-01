@@ -1,0 +1,11 @@
+{
+  "name": "amphibian.net",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "express": "^4.16.3"
+  }
+}
