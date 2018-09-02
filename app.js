@@ -5,15 +5,12 @@ var fs = require('fs');
 
 var app = express();
 
+let snowData;
 
 app.get('/snowdays', function(req, res, next) {
 
-	let sd = [
-		"2018-12-03"
-	];
-
 	res.setHeader('Content-Type', 'application/json');
-	res.send(JSON.stringify(sd));
+	res.send(JSON.stringify(snowData));
 
 });
 
@@ -31,6 +28,19 @@ app.use(express.static('static', {
 
 // ------------------------- start the listening
 
-var server = app.listen(3500, function() {
-	console.log('listening on port %d', server.address().port);
+fs.readFile('data/snowdays.json', { encoding: 'utf-8' }, function(err, data) {
+	if (err) {
+		console.log(err);
+		snowData = [];
+	} else {
+
+		snowData = JSON.parse(data);
+
+		var server = app.listen(3500, function() {
+			console.log('listening on port %d', server.address().port);
+		});
+
+	}
 });
+
+
