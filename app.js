@@ -9,7 +9,7 @@ var app = express();
 app.get('/snowdays', function(req, res, next) {
 
 	let sd = [
-		"2018-12-01"
+		"2018-12-03"
 	];
 
 	res.setHeader('Content-Type', 'application/json');
