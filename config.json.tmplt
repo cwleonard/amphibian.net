@@ -1,0 +1,9 @@
+{
+	"port": 3500,
+	"database": {
+		"host": "localhost",
+		"user": "user",
+		"password": "12345",
+		"database": "snowdays"
+	}
+}
