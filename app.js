@@ -19,7 +19,7 @@ app.get('/snowdays', function(req, res, next) {
 			console.log(err);
 		} else {
 			for (let i = 0; i < rows.length; i++) {
-				snowData.push(rows[0].dateStr);
+				snowData.push(rows[i].dateStr);
 			}
 		}
 
